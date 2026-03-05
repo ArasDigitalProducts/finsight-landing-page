@@ -1,4 +1,5 @@
 import { Plug, MessageCircle, LineChart } from "lucide-react";
+import AnimateIn from "@/components/AnimateIn";
 
 const steps = [
   {
@@ -32,7 +33,7 @@ export default function HowItWorks() {
     <section id="how-it-works" className="py-24 bg-foreground/[0.02]">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="max-w-2xl mb-16">
+        <AnimateIn className="max-w-2xl mb-16">
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
             How It Works
           </p>
@@ -42,7 +43,7 @@ export default function HowItWorks() {
           <p className="text-lg text-muted-foreground">
             FinSight eliminates the gap between your question and your ERP data.
           </p>
-        </div>
+        </AnimateIn>
 
         {/* Steps */}
         <div className="relative">
@@ -53,42 +54,44 @@ export default function HowItWorks() {
             {steps.map((step, i) => {
               const Icon = step.icon;
               return (
-                <div key={step.number} className="flex gap-8 items-start">
-                  {/* Step number + icon */}
-                  <div className="flex-shrink-0 flex flex-col items-center gap-2">
-                    <div
-                      className={`w-20 h-20 rounded-2xl flex items-center justify-center border-2 transition-colors ${
-                        i === 1
-                          ? "bg-primary border-primary text-primary-foreground"
-                          : "bg-white border-border text-foreground"
-                      }`}
-                    >
-                      <Icon className="w-8 h-8" />
+                <AnimateIn key={step.number} delay={i * 100} from="left">
+                  <div className="flex gap-8 items-start">
+                    {/* Step number + icon */}
+                    <div className="flex-shrink-0 flex flex-col items-center gap-2">
+                      <div
+                        className={`w-20 h-20 rounded-2xl flex items-center justify-center border-2 transition-colors ${
+                          i === 1
+                            ? "bg-primary border-primary text-primary-foreground"
+                            : "bg-white border-border text-foreground"
+                        }`}
+                      >
+                        <Icon className="w-8 h-8" />
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Content */}
-                  <div className="flex-1 pt-3 lg:grid lg:grid-cols-[1fr_auto] lg:gap-12 lg:items-start">
-                    <div>
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className="text-xs font-black uppercase tracking-widest text-primary/60">
-                          {step.number}
-                        </span>
-                        <h3 className="text-2xl font-bold text-foreground">{step.title}</h3>
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed max-w-lg">{step.description}</p>
-                    </div>
-                    <div className="hidden lg:block mt-1">
-                      <div className="bg-primary/5 border border-primary/10 rounded-xl px-4 py-3 text-xs text-primary font-medium leading-relaxed whitespace-nowrap">
-                        {step.aside.split(" · ").map((tag) => (
-                          <span key={tag} className="block py-0.5">
-                            · {tag}
+                    {/* Content */}
+                    <div className="flex-1 pt-3 lg:grid lg:grid-cols-[1fr_auto] lg:gap-12 lg:items-start">
+                      <div>
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="text-xs font-black uppercase tracking-widest text-primary/60">
+                            {step.number}
                           </span>
-                        ))}
+                          <h3 className="text-2xl font-bold text-foreground">{step.title}</h3>
+                        </div>
+                        <p className="text-muted-foreground leading-relaxed max-w-lg">{step.description}</p>
+                      </div>
+                      <div className="hidden lg:block mt-1">
+                        <div className="bg-primary/5 border border-primary/10 rounded-xl px-4 py-3 text-xs text-primary font-medium leading-relaxed whitespace-nowrap">
+                          {step.aside.split(" · ").map((tag) => (
+                            <span key={tag} className="block py-0.5">
+                              · {tag}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </AnimateIn>
               );
             })}
           </div>

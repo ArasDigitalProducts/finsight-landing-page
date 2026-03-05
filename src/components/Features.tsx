@@ -1,5 +1,6 @@
 import { MessageSquare, BarChart3, Zap, Shield } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import AnimateIn from "@/components/AnimateIn";
 
 const features = [
   {
@@ -37,7 +38,7 @@ export default function Features() {
     <section id="features" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="max-w-2xl mb-16">
+        <AnimateIn className="max-w-2xl mb-16">
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
             Capabilities
           </p>
@@ -47,31 +48,32 @@ export default function Features() {
           <p className="text-lg text-muted-foreground">
             From ad-hoc queries to scheduled reporting, FinSight covers the full spectrum of financial controlling workflows.
           </p>
-        </div>
+        </AnimateIn>
 
         {/* Feature grid */}
         <div className="grid sm:grid-cols-2 gap-6">
-          {features.map((feature) => {
+          {features.map((feature, i) => {
             const Icon = feature.icon;
             return (
-              <Card
-                key={feature.title}
-                className={`p-8 rounded-2xl border transition-shadow hover:shadow-lg hover:shadow-primary/5 ${
-                  feature.highlight
-                    ? "border-primary/30 bg-primary/[0.03]"
-                    : "border-border bg-white"
-                }`}
-              >
-                <div
-                  className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${
-                    feature.highlight ? "bg-primary text-primary-foreground" : "bg-foreground/[0.06] text-foreground"
+              <AnimateIn key={feature.title} delay={i * 80}>
+                <Card
+                  className={`p-8 rounded-2xl border transition-shadow hover:shadow-lg hover:shadow-primary/5 ${
+                    feature.highlight
+                      ? "border-primary/30 bg-primary/[0.03]"
+                      : "border-border bg-white"
                   }`}
                 >
-                  <Icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-              </Card>
+                  <div
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${
+                      feature.highlight ? "bg-primary text-primary-foreground" : "bg-foreground/[0.06] text-foreground"
+                    }`}
+                  >
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                </Card>
+              </AnimateIn>
             );
           })}
         </div>

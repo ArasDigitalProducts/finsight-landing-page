@@ -1,17 +1,27 @@
+import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { Linkedin, Twitter, Github } from "lucide-react";
 
-const footerLinks = {
-  Product: ["Features", "How It Works", "Integrations", "Pricing", "Changelog"],
-  Company: ["About", "Blog", "Careers", "Press", "Contact"],
-  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy", "Security"],
+const footerLinks: Record<string, { label: string; href: string }[]> = {
+  Product: [
+    { label: "Features", href: "#features" },
+    { label: "How It Works", href: "#how-it-works" },
+    { label: "Why FinSight", href: "#why-finsight" },
+    { label: "Contact", href: "#contact" },
+  ],
+  Legal: [
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
+    { label: "Cookie Policy", href: "/cookies" },
+    { label: "Security", href: "/security" },
+  ],
 };
 
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-border">
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-12 mb-16">
           {/* Brand column */}
           <div className="col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
@@ -46,13 +56,13 @@ export default function Footer() {
               </p>
               <ul className="flex flex-col gap-3">
                 {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      {link}
-                    </a>
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
