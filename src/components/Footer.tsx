@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
-import { Linkedin, Twitter, Github } from "lucide-react";
 
 const footerLinks: Record<string, { label: string; href: string }[]> = {
   Product: [
@@ -24,28 +24,12 @@ export default function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-12 mb-16">
           {/* Brand column */}
           <div className="col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-black text-sm">F</span>
-              </div>
-              <span className="font-black text-xl tracking-tight text-foreground">
-                Fin<span className="text-primary">Sight</span>
-              </span>
+            <div className="mb-4">
+              <Image src="/finsight-logo.png" alt="FinSight" width={2571} height={675} className="h-7 w-auto" />
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-xs">
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               AI-powered financial controlling. A single prompt to unlock insights from your ERP data.
             </p>
-            <div className="flex items-center gap-3">
-              {[Linkedin, Twitter, Github].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-9 h-9 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/20 transition-colors"
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Link columns */}
@@ -59,9 +43,10 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className="relative text-sm text-muted-foreground hover:text-foreground transition-colors group/flink"
                     >
                       {link.label}
+                      <span className="absolute bottom-0 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover/flink:w-full" />
                     </Link>
                   </li>
                 ))}
@@ -73,9 +58,12 @@ export default function Footer() {
         <Separator className="mb-8" />
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>© 2025 FinSight. Delivered by Aras™ Digital Products & BSG Advisory™.</p>
-          <p className="flex items-center gap-1">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-500" />
+          <p>© 2026 FinSight. Delivered by Aras™ Digital Products & BSG Advisory™.</p>
+          <p className="flex items-center gap-1.5">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-40" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+            </span>
             All systems operational
           </p>
         </div>

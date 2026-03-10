@@ -33,22 +33,16 @@ export default function ERPIntegration() {
     <section id="why-finsight" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <AnimateIn>
-          <div className="grid lg:grid-cols-2 gap-16 items-start mb-16">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-                Why FinSight
-              </p>
-              <h2 className="text-4xl lg:text-5xl font-black tracking-tight text-foreground">
-                Your ERP data. Instantly actionable.
-              </h2>
-            </div>
-            <div className="lg:pt-12">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Traditional financial reporting is slow, rigid and bottlenecked by tooling and people. FinSight replaces that chain with a single AI layer that sits directly on top of your data.
-              </p>
-            </div>
-          </div>
+        <AnimateIn className="max-w-2xl mb-16">
+          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+            Why FinSight
+          </p>
+          <h2 className="text-4xl lg:text-5xl font-black tracking-tight text-foreground mb-4">
+            Your ERP data. Instantly actionable.
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Traditional financial reporting is slow, rigid and bottlenecked by tooling and people. FinSight replaces that chain with a single AI layer that sits directly on top of your data.
+          </p>
         </AnimateIn>
 
         {/* Value prop grid */}
@@ -56,14 +50,14 @@ export default function ERPIntegration() {
           {valueProps.map((prop, i) => {
             const Icon = prop.icon;
             return (
-              <AnimateIn key={prop.title} delay={i * 80}>
-                <div className="rounded-2xl border border-border bg-foreground/[0.015] p-7 flex gap-5 hover:border-primary/20 hover:shadow-md hover:shadow-primary/5 transition-all">
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Icon className="w-5 h-5 text-primary" />
+              <AnimateIn key={prop.title} delay={i * 80} className="h-full">
+                <div className="group h-full rounded-2xl border border-border bg-foreground/[0.015] p-7 flex gap-5 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/10">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 transition-all duration-500 bg-primary/10 text-primary group-hover:bg-primary/20">
+                    <Icon className="w-5 h-5" />
                   </div>
                   <div>
                     <h3 className="text-base font-bold text-foreground mb-1.5">{prop.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{prop.description}</p>
+                    <p className="text-sm leading-relaxed transition-colors duration-500 text-muted-foreground group-hover:text-foreground/70">{prop.description}</p>
                   </div>
                 </div>
               </AnimateIn>

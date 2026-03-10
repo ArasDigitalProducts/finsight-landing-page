@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import AnimateIn from "@/components/AnimateIn";
 
@@ -11,39 +12,17 @@ export default function LogoBar() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16">
             {/* Aras Digital Products */}
-            <div className="flex flex-col items-center gap-1">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-md bg-foreground flex items-center justify-center">
-                  <span className="text-background font-black text-xs">A</span>
-                </div>
-                <div>
-                  <p className="font-black text-lg tracking-tight text-foreground leading-none">aras™</p>
-                  <p className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider leading-none">
-                    digital products
-                  </p>
-                </div>
-              </div>
-            </div>
+            <a href="https://arasdigital.co" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 opacity-70 hover:opacity-100 hover:scale-105">
+              <Image src="/adp-logo.png" alt="Aras Digital Products" width={289} height={118} className="h-10 w-auto" />
+            </a>
 
             <Separator orientation="vertical" className="hidden sm:block h-10" />
             <div className="sm:hidden w-16 h-px bg-border" />
 
             {/* BSG Advisory */}
-            <div className="flex flex-col items-center gap-1">
-              <div className="flex items-center gap-2.5">
-                <div className="flex items-center gap-0.5">
-                  <div className="w-2 h-8 rounded-sm bg-primary" />
-                  <div className="w-2 h-8 rounded-sm bg-primary/70" />
-                  <div className="w-2 h-8 rounded-sm bg-primary/40" />
-                </div>
-                <div>
-                  <p className="font-black text-lg tracking-tight text-foreground leading-none">BSG™</p>
-                  <p className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider leading-none">
-                    advisory
-                  </p>
-                </div>
-              </div>
-            </div>
+            <a href="https://bsg-advisory.hr/en/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 opacity-70 hover:opacity-100 hover:scale-105">
+              <Image src="/bsg-logo.png" alt="BSG Advisory" width={455} height={203} className="h-10 w-auto" />
+            </a>
           </div>
         </AnimateIn>
       </div>

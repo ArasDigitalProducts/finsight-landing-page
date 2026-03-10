@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -14,10 +15,22 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const sectionIds = navLinks.map((l) => l.href.slice(1));
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
+      const scrollY = window.scrollY + 96;
+      let current = "";
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollY) current = id;
+      }
+      setActiveSection(current);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -31,26 +44,31 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-black text-sm">F</span>
-          </div>
-          <span className="font-black text-xl tracking-tight text-foreground">
-            Fin<span className="text-primary">Sight</span>
-          </span>
+        <a href="#">
+          <Image src="/finsight-logo.png" alt="FinSight" width={2571} height={675} className="h-7 w-auto" />
         </a>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.slice(1);
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`relative text-sm font-medium transition-colors group/link ${
+                  isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {link.label}
+                <span
+                  className={`absolute bottom-0 left-0 h-px bg-foreground transition-all duration-300 ${
+                    isActive ? "w-full" : "w-0 group-hover/link:w-full"
+                  }`}
+                />
+              </a>
+            );
+          })}
         </nav>
 
         {/* Desktop CTA */}
@@ -74,8 +92,12 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white border-b border-border px-6 pb-6 pt-2">
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          menuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="bg-white border-b border-border px-6 pb-6 pt-2">
           <nav className="flex flex-col gap-4 mb-4">
             {navLinks.map((link) => (
               <a
@@ -94,7 +116,7 @@ export default function Navbar() {
             </a>
           </Button>
         </div>
-      )}
+      </div>
     </header>
   );
 }

@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   description:
     "FinSight is an AI agent system for financial controlling. Analyse your ERP data and get instant insights with a single natural language prompt.",
   keywords: ["finance", "ERP", "AI", "financial controlling", "SAP", "analytics"],
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

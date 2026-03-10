@@ -12,10 +12,43 @@ const promptExamples = [
   "Variance analysis for operating expenses",
 ];
 
-const resultLines = [
-  { label: "Revenue", value: "€ 4.2M", delta: "+12.4%", positive: true },
-  { label: "Budget", value: "€ 3.8M", delta: "ref", positive: null },
-  { label: "Variance", value: "+€ 0.4M", delta: "above target", positive: true },
+const results = [
+  {
+    intro: "Here's your Q1 cash flow breakdown vs. budget:",
+    title: "Q1 Cash Flow Summary",
+    lines: [
+      { label: "Operating CF", value: "€ 1.8M", delta: "+8.2%", positive: true },
+      { label: "Investing CF", value: "–€ 0.6M", delta: "within plan", positive: null },
+      { label: "Free Cash Flow", value: "€ 1.2M", delta: "+15.1%", positive: true },
+    ],
+  },
+  {
+    intro: "Found 3 cost centers over budget this month:",
+    title: "Over-Budget Cost Centers",
+    lines: [
+      { label: "Marketing", value: "€ 312K", delta: "+18.4%", positive: false },
+      { label: "R&D", value: "€ 487K", delta: "+9.1%", positive: false },
+      { label: "Logistics", value: "€ 201K", delta: "+22.7%", positive: false },
+    ],
+  },
+  {
+    intro: "Here's the Q2 revenue forecast based on current trends:",
+    title: "Q2 Revenue Forecast",
+    lines: [
+      { label: "Q2 Forecast", value: "€ 4.6M", delta: "+9.5% vs Q1", positive: true },
+      { label: "vs Target", value: "+€ 0.3M", delta: "ahead of plan", positive: true },
+      { label: "Confidence", value: "94%", delta: "high", positive: null },
+    ],
+  },
+  {
+    intro: "Operating expense variance analysis complete:",
+    title: "OpEx Variance Report",
+    lines: [
+      { label: "Personnel", value: "€ 2.1M", delta: "+4.2%", positive: false },
+      { label: "Overhead", value: "€ 0.8M", delta: "–1.8% fav.", positive: true },
+      { label: "Total OpEx", value: "€ 2.9M", delta: "+2.1%", positive: false },
+    ],
+  },
 ];
 
 export default function Hero() {
@@ -91,11 +124,11 @@ export default function Hero() {
             <Button
               asChild
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg gap-2"
+              className="group bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg gap-2"
             >
               <a href="#contact">
                 Get Early Access
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
               </a>
             </Button>
             <Button
@@ -160,17 +193,17 @@ export default function Hero() {
                     <span className="text-primary text-xs font-black">AI</span>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Here&apos;s your Q1 revenue analysis vs. budget:
+                    {results[promptIdx].intro}
                   </p>
                 </div>
 
                 <div className="ml-10 rounded-xl border border-border overflow-hidden">
                   <div className="bg-primary/5 px-4 py-2.5 flex items-center gap-2 border-b border-border">
                     <BarChart2 className="w-4 h-4 text-primary" />
-                    <span className="text-xs font-semibold text-foreground">Q1 Revenue Overview</span>
+                    <span className="text-xs font-semibold text-foreground">{results[promptIdx].title}</span>
                   </div>
                   <div className="divide-y divide-border">
-                    {resultLines.map((row) => (
+                    {results[promptIdx].lines.map((row) => (
                       <div key={row.label} className="flex items-center justify-between px-4 py-2.5">
                         <span className="text-xs text-muted-foreground">{row.label}</span>
                         <div className="flex items-center gap-2">
@@ -215,7 +248,7 @@ export default function Hero() {
             {/* Footer */}
             <div className="px-5 py-3 bg-foreground/[0.02] border-t border-border">
               <p className="text-xs text-muted-foreground text-center">
-                Powered by FinSight AI · Connected to SAP
+                Powered by FinSight AI
               </p>
             </div>
           </div>
