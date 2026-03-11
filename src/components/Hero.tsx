@@ -182,69 +182,68 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Result area */}
-            <div
-              className={`transition-all duration-500 ${
-                showResult ? "opacity-100 max-h-64" : "opacity-0 max-h-0"
-              } overflow-hidden`}
-            >
-              <div className="p-5">
-                <div className="flex items-start gap-3 mb-4">
-                  <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-primary text-xs font-black">AI</span>
+            {/* Fixed-height area — reserves space so card height never changes */}
+            <div className="relative h-64 overflow-hidden">
+              {/* Result */}
+              <div className={`absolute inset-0 transition-opacity duration-500 ${showResult ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
+                <div className="p-5">
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-primary text-xs font-black">AI</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      {results[promptIdx].intro}
+                    </p>
                   </div>
-                  <p className="text-sm text-muted-foreground">
-                    {results[promptIdx].intro}
-                  </p>
-                </div>
 
-                <div className="ml-10 rounded-xl border border-border overflow-hidden">
-                  <div className="bg-primary/5 px-4 py-2.5 flex items-center gap-2 border-b border-border">
-                    <BarChart2 className="w-4 h-4 text-primary" />
-                    <span className="text-xs font-semibold text-foreground">{results[promptIdx].title}</span>
-                  </div>
-                  <div className="divide-y divide-border">
-                    {results[promptIdx].lines.map((row) => (
-                      <div key={row.label} className="flex items-center justify-between px-4 py-2.5">
-                        <span className="text-xs text-muted-foreground">{row.label}</span>
-                        <div className="flex items-center gap-2">
-                          <span className="text-sm font-semibold text-foreground">{row.value}</span>
-                          {row.positive !== null && (
-                            <span
-                              className={`text-xs font-medium flex items-center gap-0.5 ${
-                                row.positive ? "text-green-600" : "text-red-500"
-                              }`}
-                            >
-                              {row.positive ? (
-                                <TrendingUp className="w-3 h-3" />
-                              ) : (
-                                <DollarSign className="w-3 h-3" />
-                              )}
-                              {row.delta}
-                            </span>
-                          )}
-                          {row.positive === null && (
-                            <span className="text-xs text-muted-foreground">{row.delta}</span>
-                          )}
+                  <div className="ml-10 rounded-xl border border-border overflow-hidden">
+                    <div className="bg-primary/5 px-4 py-2.5 flex items-center gap-2 border-b border-border">
+                      <BarChart2 className="w-4 h-4 text-primary" />
+                      <span className="text-xs font-semibold text-foreground">{results[promptIdx].title}</span>
+                    </div>
+                    <div className="divide-y divide-border">
+                      {results[promptIdx].lines.map((row) => (
+                        <div key={row.label} className="flex items-center justify-between px-4 py-2.5">
+                          <span className="text-xs text-muted-foreground">{row.label}</span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm font-semibold text-foreground">{row.value}</span>
+                            {row.positive !== null && (
+                              <span
+                                className={`text-xs font-medium flex items-center gap-0.5 ${
+                                  row.positive ? "text-green-600" : "text-red-500"
+                                }`}
+                              >
+                                {row.positive ? (
+                                  <TrendingUp className="w-3 h-3" />
+                                ) : (
+                                  <DollarSign className="w-3 h-3" />
+                                )}
+                                {row.delta}
+                              </span>
+                            )}
+                            {row.positive === null && (
+                              <span className="text-xs text-muted-foreground">{row.delta}</span>
+                            )}
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
+                </div>
+              </div>
+
+              {/* Loading */}
+              <div className={`absolute inset-0 transition-opacity duration-300 ${!typing && !showResult ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
+                <div className="p-5 flex items-center gap-3 ml-10">
+                  <div className="flex gap-1">
+                    <div className="w-2 h-2 rounded-full bg-primary/40 animate-bounce [animation-delay:0ms]" />
+                    <div className="w-2 h-2 rounded-full bg-primary/40 animate-bounce [animation-delay:150ms]" />
+                    <div className="w-2 h-2 rounded-full bg-primary/40 animate-bounce [animation-delay:300ms]" />
+                  </div>
+                  <span className="text-xs text-muted-foreground">Analysing ERP data...</span>
                 </div>
               </div>
             </div>
-
-            {/* Loading state */}
-            {!typing && !showResult && (
-              <div className="p-5 flex items-center gap-3 ml-10">
-                <div className="flex gap-1">
-                  <div className="w-2 h-2 rounded-full bg-primary/40 animate-bounce [animation-delay:0ms]" />
-                  <div className="w-2 h-2 rounded-full bg-primary/40 animate-bounce [animation-delay:150ms]" />
-                  <div className="w-2 h-2 rounded-full bg-primary/40 animate-bounce [animation-delay:300ms]" />
-                </div>
-                <span className="text-xs text-muted-foreground">Analysing ERP data...</span>
-              </div>
-            )}
 
             {/* Footer */}
             <div className="px-5 py-3 bg-foreground/[0.02] border-t border-border">
