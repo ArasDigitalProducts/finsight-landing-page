@@ -13,7 +13,7 @@ export default function LogoBar() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16">
             {/* Aras Digital Products */}
             <a href="https://arasdigital.co" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 opacity-70 hover:opacity-100 hover:scale-105">
-              <Image src="/adp-logo.png" alt="Aras Digital Products" width={289} height={118} className="h-10 w-auto" />
+              <Image src="/adp-logo.png" alt="Aras Digital Products" width={236} height={48} className="h-10 w-auto" />
             </a>
 
             <Separator orientation="vertical" className="hidden sm:block h-10" />
