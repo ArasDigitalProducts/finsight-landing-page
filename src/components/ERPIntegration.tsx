@@ -1,4 +1,5 @@
 import { BrainCircuit, Clock3, LayoutDashboard, Users, Settings, Sparkles, X, Check } from "lucide-react";
+import { Card } from "@/components/ui/card";
 import AnimateIn from "@/components/AnimateIn";
 
 const valueProps = [
@@ -59,15 +60,15 @@ export default function ERPIntegration() {
             const Icon = prop.icon;
             return (
               <AnimateIn key={prop.title} delay={i * 80} className="h-full">
-                <div className="group h-full rounded-2xl border border-border bg-foreground/[0.015] p-7 flex gap-5 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/10">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 transition-all duration-500 bg-primary/10 text-primary group-hover:bg-primary/20">
-                    <Icon className="w-5 h-5" />
+                <Card className="group h-full p-8 rounded-2xl border border-border bg-foreground/[0.015] shadow-none flex gap-5 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/10">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 transition-all duration-500 bg-foreground/[0.06] text-foreground group-hover:bg-primary/10 group-hover:text-primary">
+                    <Icon className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="text-base font-bold text-foreground mb-1.5">{prop.title}</h3>
                     <p className="text-sm leading-relaxed transition-colors duration-500 text-muted-foreground group-hover:text-foreground/70">{prop.description}</p>
                   </div>
-                </div>
+                </Card>
               </AnimateIn>
             );
           })}

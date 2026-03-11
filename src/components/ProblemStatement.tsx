@@ -1,4 +1,5 @@
 import { Database, FileSpreadsheet, Users, BarChart } from "lucide-react";
+import { Card } from "@/components/ui/card";
 import AnimateIn from "@/components/AnimateIn";
 
 const problems = [
@@ -42,12 +43,12 @@ export default function ProblemStatement() {
             const Icon = problem.icon;
             return (
               <AnimateIn key={problem.text} delay={i * 80} className="h-full">
-                <div className="group h-full rounded-2xl border border-border bg-white p-6 flex flex-col gap-4 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/10">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-500 bg-foreground/[0.06] text-foreground/60 group-hover:bg-primary/10 group-hover:text-primary">
-                    <Icon className="w-5 h-5 transition-transform duration-300 group-hover:-translate-y-0.5" />
+                <Card className="group h-full p-8 rounded-2xl border border-border bg-foreground/[0.015] shadow-none transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/10">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-500 bg-foreground/[0.06] text-foreground group-hover:bg-primary/10 group-hover:text-primary">
+                    <Icon className="w-6 h-6" />
                   </div>
                   <p className="text-sm leading-relaxed transition-colors duration-500 text-muted-foreground group-hover:text-foreground/70">{problem.text}</p>
-                </div>
+                </Card>
               </AnimateIn>
             );
           })}
