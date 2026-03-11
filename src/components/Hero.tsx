@@ -99,7 +99,7 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-primary/8 blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center w-full">
+      <div className="relative max-w-6xl mx-auto px-6 pt-20 pb-28 grid lg:grid-cols-2 gap-16 items-center w-full">
         {/* Left — copy */}
         <div className="flex flex-col gap-6">
           <Badge
@@ -183,7 +183,7 @@ export default function Hero() {
             </div>
 
             {/* Fixed-height area — reserves space so card height never changes */}
-            <div className="relative h-64 overflow-hidden">
+            <div className="relative h-80 overflow-hidden">
               {/* Result */}
               <div className={`absolute inset-0 transition-opacity duration-500 ${showResult ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
                 <div className="p-5">
@@ -256,7 +256,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll cue */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce">
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce">
         <span className="text-xs text-muted-foreground">Scroll to explore</span>
         <ChevronDown className="w-4 h-4 text-muted-foreground" />
       </div>
