@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import LogoBar from "@/components/LogoBar";
+import ProblemStatement from "@/components/ProblemStatement";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
 import ERPIntegration from "@/components/ERPIntegration";
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <LogoBar />
+      <ProblemStatement />
       <Features />
       <HowItWorks />
       <ERPIntegration />

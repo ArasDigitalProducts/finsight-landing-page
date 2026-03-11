@@ -6,47 +6,47 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, ChevronDown, TrendingUp, DollarSign, BarChart2 } from "lucide-react";
 
 const promptExamples = [
-  "Show Q1 cash flow vs budget",
-  "Which cost centers are over budget?",
-  "Forecast revenue for next quarter",
-  "Variance analysis for operating expenses",
+  "Why did our gross margin decline this month?",
+  "Compare SKU profitability across regions",
+  "What changed in EBITDA drivers this quarter?",
+  "What would +3% pricing do to our margin?",
 ];
 
 const results = [
   {
-    intro: "Here's your Q1 cash flow breakdown vs. budget:",
-    title: "Q1 Cash Flow Summary",
+    intro: "Gross margin declined 2.3pp vs. prior month. Key drivers:",
+    title: "Gross Margin Analysis",
     lines: [
-      { label: "Operating CF", value: "€ 1.8M", delta: "+8.2%", positive: true },
-      { label: "Investing CF", value: "–€ 0.6M", delta: "within plan", positive: null },
-      { label: "Free Cash Flow", value: "€ 1.2M", delta: "+15.1%", positive: true },
+      { label: "Gross Margin", value: "34.1%", delta: "–2.3pp", positive: false },
+      { label: "Raw Material Cost", value: "+€ 0.4M", delta: "unfav.", positive: false },
+      { label: "Pricing Effect", value: "–€ 0.2M", delta: "unfav.", positive: false },
     ],
   },
   {
-    intro: "Found 3 cost centers over budget this month:",
-    title: "Over-Budget Cost Centers",
+    intro: "SKU profitability by region — top and bottom performers:",
+    title: "SKU Profitability",
     lines: [
-      { label: "Marketing", value: "€ 312K", delta: "+18.4%", positive: false },
-      { label: "R&D", value: "€ 487K", delta: "+9.1%", positive: false },
-      { label: "Logistics", value: "€ 201K", delta: "+22.7%", positive: false },
+      { label: "Product A – West", value: "€ 0.9M", delta: "+41% margin", positive: true },
+      { label: "Product B – East", value: "€ 0.3M", delta: "+12% margin", positive: true },
+      { label: "Product C – North", value: "€ 0.1M", delta: "–3% margin", positive: false },
     ],
   },
   {
-    intro: "Here's the Q2 revenue forecast based on current trends:",
-    title: "Q2 Revenue Forecast",
+    intro: "EBITDA driver changes vs. prior quarter:",
+    title: "EBITDA Bridge Q3 → Q4",
     lines: [
-      { label: "Q2 Forecast", value: "€ 4.6M", delta: "+9.5% vs Q1", positive: true },
-      { label: "vs Target", value: "+€ 0.3M", delta: "ahead of plan", positive: true },
-      { label: "Confidence", value: "94%", delta: "high", positive: null },
+      { label: "Revenue Mix", value: "+€ 0.6M", delta: "fav.", positive: true },
+      { label: "Cost of Sales", value: "–€ 0.3M", delta: "unfav.", positive: false },
+      { label: "EBITDA", value: "€ 3.2M", delta: "+9.7%", positive: true },
     ],
   },
   {
-    intro: "Operating expense variance analysis complete:",
-    title: "OpEx Variance Report",
+    intro: "+3% pricing impact across your product portfolio:",
+    title: "Pricing Scenario +3%",
     lines: [
-      { label: "Personnel", value: "€ 2.1M", delta: "+4.2%", positive: false },
-      { label: "Overhead", value: "€ 0.8M", delta: "–1.8% fav.", positive: true },
-      { label: "Total OpEx", value: "€ 2.9M", delta: "+2.1%", positive: false },
+      { label: "Revenue Impact", value: "+€ 1.1M", delta: "annualised", positive: null },
+      { label: "Gross Margin", value: "+1.8pp", delta: "to 35.9%", positive: true },
+      { label: "EBITDA Effect", value: "+€ 0.9M", delta: "+28% uplift", positive: true },
     ],
   },
 ];
@@ -106,18 +106,19 @@ export default function Hero() {
             variant="secondary"
             className="w-fit bg-primary/10 text-primary border-0 font-semibold text-xs uppercase tracking-wider px-3 py-1.5"
           >
-            AI-Powered Financial Controlling
+            Financial Intelligence Layer for ERP
           </Badge>
 
           <h1 className="text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.04] tracking-tight text-foreground">
-            A single prompt.
+            Turn ERP data into
             <br />
-            <span className="text-primary">Finance controlling.</span>
+            <span className="text-primary">executive financial clarity.</span>
           </h1>
 
           <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
-            Connect your ERP, ask in plain language, get instant insights.
-            No SQL. No dashboards. No waiting for the finance team.
+            FinSight is configured to your company&apos;s chart of accounts, cost centers,
+            KPI definitions and managerial accounting logic — so answers reflect how
+            your business actually measures performance.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
@@ -144,11 +145,11 @@ export default function Hero() {
           <div className="flex items-center gap-6 pt-2">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
-              No credit card required
+              Typical deployment: 3–4 weeks
             </div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
-              SOC 2 compliant
+              No ERP replacement
             </div>
           </div>
         </div>
@@ -233,7 +234,7 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Loading state when not showing result and not typing */}
+            {/* Loading state */}
             {!typing && !showResult && (
               <div className="p-5 flex items-center gap-3 ml-10">
                 <div className="flex gap-1">

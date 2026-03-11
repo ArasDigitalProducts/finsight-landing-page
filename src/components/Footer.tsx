@@ -28,7 +28,7 @@ export default function Footer() {
               <Image src="/finsight-logo.png" alt="FinSight" width={1749} height={492} className="h-7 w-auto" />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              AI-powered financial controlling. A single prompt to unlock insights from your ERP data.
+              Turning ERP data into executive financial clarity.
             </p>
           </div>
 

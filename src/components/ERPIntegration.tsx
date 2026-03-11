@@ -1,31 +1,39 @@
-import { BrainCircuit, Clock3, BarChart2, Users, Layers, Sparkles } from "lucide-react";
+import { BrainCircuit, Clock3, LayoutDashboard, Users, Settings, Sparkles, X, Check } from "lucide-react";
 import AnimateIn from "@/components/AnimateIn";
 
 const valueProps = [
   {
     icon: Clock3,
-    title: "No more waiting for reports",
+    title: "From days of reconstruction to live decision support",
     description:
-      "Stop submitting report requests and waiting days for answers. FinSight queries your data live and responds in seconds.",
+      "Stop waiting for analysts to reconstruct data into reports. FinSight queries your configured financial model in real time and delivers structured, decision-grade answers on demand.",
   },
   {
-    icon: BarChart2,
-    title: "No BI tool required",
+    icon: LayoutDashboard,
+    title: "Beyond dashboards and predefined KPIs",
     description:
-      "Skip the Tableau license, the dashboard maintenance, and the training. Ask your question in plain language and get the answer directly.",
+      "Skip the predefined dashboard, the analyst interpretation and the 3-day wait. Ask any financial question directly and get an answer structured around your company's own definitions — not generic BI defaults.",
   },
   {
     icon: Users,
-    title: "No analyst bottleneck",
+    title: "Direct access to financial interpretation",
     description:
-      "Managers and controllers get direct access to financial insights — without routing every ad-hoc question through the finance team.",
+      "Controllers and executives get direct access to financial reasoning — without routing every question through the finance team or waiting for a custom report to be built.",
   },
   {
-    icon: Layers,
-    title: "Multi-step reasoning",
+    icon: Settings,
+    title: "Company-configured financial reasoning",
     description:
-      "FinSight doesn't just fetch rows — it reasons across entities, time periods and hierarchies to deliver answers that require real financial understanding.",
+      "FinSight applies your configured EBITDA logic, reclass rules, cost allocations and internal KPI definitions to deliver structured explanations management can act on — not generic AI outputs.",
   },
+];
+
+const comparisonRows = [
+  { generic: "Reads standardised ERP tables", finsight: "Configured to your chart of accounts and cost structure" },
+  { generic: "Ignores company-specific semantics", finsight: "Applies your internal KPI definitions and reclass rules" },
+  { generic: "Cannot apply managerial accounting logic", finsight: "Encodes your EBITDA logic and allocation rules" },
+  { generic: "Returns numbers, not management answers", finsight: "Returns structured explanations for decision-making" },
+  { generic: "Generic across all companies", finsight: "Configured specifically to your financial model" },
 ];
 
 export default function ERPIntegration() {
@@ -38,10 +46,10 @@ export default function ERPIntegration() {
             Why FinSight
           </p>
           <h2 className="text-4xl lg:text-5xl font-black tracking-tight text-foreground mb-4">
-            Your ERP data. Instantly actionable.
+            Beyond dashboards. Financial intelligence that reasons.
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Traditional financial reporting is slow, rigid and bottlenecked by tooling and people. FinSight replaces that chain with a single AI layer that sits directly on top of your data.
+            Traditional BI shows what happened. FinSight explains why it happened and what to adjust — configured to your company&apos;s financial model, not a generic layer on top of raw data.
           </p>
         </AnimateIn>
 
@@ -65,25 +73,61 @@ export default function ERPIntegration() {
           })}
         </div>
 
-        {/* AI agent callout */}
+        {/* Comparison: Generic AI vs FinSight */}
         <AnimateIn from="bottom" delay={100}>
-          <div className="rounded-2xl bg-foreground p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-12">
-            <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center flex-shrink-0">
-              <BrainCircuit className="w-7 h-7 text-primary-foreground" />
-            </div>
-            <div className="flex-1">
-              <div className="flex items-center gap-2 mb-2">
-                <Sparkles className="w-4 h-4 text-primary" />
-                <p className="text-xs font-semibold uppercase tracking-widest text-primary">
-                  Agentic AI
+          <div className="rounded-2xl bg-foreground overflow-hidden">
+            {/* Header */}
+            <div className="p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-12 border-b border-white/10">
+              <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center flex-shrink-0">
+                <BrainCircuit className="w-7 h-7 text-primary-foreground" />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-2">
+                  <Sparkles className="w-4 h-4 text-primary" />
+                  <p className="text-xs font-semibold uppercase tracking-widest text-primary">
+                    Financial Reasoning Layer
+                  </p>
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">
+                  Not just a chatbot. A financial reasoning layer configured to your company&apos;s logic.
+                </h3>
+                <p className="text-white/60 leading-relaxed max-w-2xl">
+                  Standard AI reads standardised tables and ignores company semantics. FinSight is configured around the way your company defines profitability, cost and performance — so it returns the number management actually uses.
                 </p>
               </div>
-              <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">
-                Not a chatbot. An AI agent.
-              </h3>
-              <p className="text-white/60 leading-relaxed max-w-2xl">
-                FinSight uses an autonomous agent architecture that breaks down complex financial questions into sub-tasks, queries multiple data sources, validates results and synthesises a coherent answer — the same way a skilled analyst would, but in seconds.
-              </p>
+            </div>
+
+            {/* Comparison table */}
+            <div className="grid lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
+              {/* Generic AI column */}
+              <div className="p-8 lg:p-10">
+                <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-6">Generic AI on ERP</p>
+                <div className="flex flex-col gap-4">
+                  {comparisonRows.map((row) => (
+                    <div key={row.generic} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <X className="w-3 h-3 text-white/40" />
+                      </div>
+                      <p className="text-sm text-white/50 leading-relaxed">{row.generic}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* FinSight column */}
+              <div className="p-8 lg:p-10">
+                <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-6">FinSight</p>
+                <div className="flex flex-col gap-4">
+                  {comparisonRows.map((row) => (
+                    <div key={row.finsight} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-primary" />
+                      </div>
+                      <p className="text-sm text-white/80 leading-relaxed">{row.finsight}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </AnimateIn>

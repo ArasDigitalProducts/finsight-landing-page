@@ -7,25 +7,25 @@ const features = [
     icon: MessageSquare,
     title: "Natural Language Queries",
     description:
-      "Ask questions in plain language — no SQL, no formulas, no training required. FinSight understands financial terminology out of the box.",
+      "Ask financial questions in plain language — get decision-grade answers grounded in your company's KPI definitions, cost structures and managerial reporting logic. No SQL, no dashboard building, no manual reconciliation.",
   },
   {
     icon: BarChart3,
     title: "ERP Data Analysis",
     description:
-      "Connect directly to your ERP and let AI agents query, aggregate and interpret your financial data in real time.",
+      "FinSight applies a configured financial reasoning layer on top of your ERP data. It maps your chart of accounts, cost centers and managerial logic to produce structured explanations for decision-making.",
   },
   {
     icon: Zap,
     title: "Automated Reporting",
     description:
-      "Generate controlling reports — variance analyses, budget reviews, cash flow statements — in seconds, not hours.",
+      "Structured financial reasoning also enables faster reporting distribution. Generate controlled reports — variance analyses, EBITDA bridges, budget reviews — as an output of the reasoning layer, not a separate workflow.",
   },
   {
     icon: Shield,
     title: "Audit-Ready Insights",
     description:
-      "Every insight is fully traceable back to source data records. SOC 2 compliant with role-based access control.",
+      "Every output is fully traceable to source data. FinSight encodes your financial logic explicitly, making reasoning transparent and auditable by design. SOC 2 compliant with role-based access control.",
   },
 ];
 
@@ -39,10 +39,10 @@ export default function Features() {
             Capabilities
           </p>
           <h2 className="text-4xl lg:text-5xl font-black tracking-tight text-foreground mb-4">
-            Everything you need to control your finances.
+            From ERP data to decision-grade financial answers.
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            From ad-hoc queries to scheduled reporting, FinSight covers the full spectrum of financial controlling workflows.
+            FinSight covers the full spectrum of financial controlling — configured to your company&apos;s financial model, not generic AI defaults.
           </p>
         </AnimateIn>
 

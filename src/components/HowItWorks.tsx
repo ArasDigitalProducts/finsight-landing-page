@@ -1,33 +1,33 @@
 "use client";
 
-import { Plug, MessageCircle, LineChart } from "lucide-react";
+import { Settings2, Plug, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import AnimateIn from "@/components/AnimateIn";
 
 const steps = [
   {
     number: "01",
-    icon: Plug,
-    title: "Connect your ERP",
+    icon: Settings2,
+    title: "Configure your financial logic",
     description:
-      "FinSight connects to your ERP with secure, read-only access to your financial data. Your data team handles the one-time setup — no changes to business logic, no disruption to existing workflows.",
-    aside: "Secure · Read-only · No business logic changes",
+      "Map your chart of accounts, cost centers, KPI definitions, EBITDA logic and reporting rules. FinSight encodes the financial semantics your company already uses — we encode the logic, not replace it.",
+    aside: "Chart of accounts · Cost centers · KPI definitions",
   },
   {
     number: "02",
-    icon: MessageCircle,
-    title: "Ask a question",
+    icon: Plug,
+    title: "Connect your ERP data",
     description:
-      'Type a prompt in plain language — "Show me cash flow variance for Q1 vs budget" or "Which cost centers are over budget this month?" FinSight understands financial context.',
-    aside: "Natural language · Multi-step reasoning · Financial ontology",
+      "FinSight structures live ERP data through your configured financial model with secure, read-only access. No ERP replacement. No disruption to existing workflows. No redesign of finance processes.",
+    aside: "Secure · Read-only · No ERP changes",
   },
   {
     number: "03",
-    icon: LineChart,
-    title: "Get instant insight",
+    icon: MessageCircle,
+    title: "Ask and act",
     description:
-      "The AI agent queries your ERP, runs the analysis, and returns structured results with charts, tables, and narrative explanations — ready to share or export.",
-    aside: "Charts · Tables · PDF export · Scheduled reports",
+      "Executives and controllers ask questions in plain language and get structured, decision-grade answers — grounded in your company's financial logic, not generic AI interpretation.",
+    aside: "Decision-grade outputs · PDF export · Scheduled reports",
   },
 ];
 
@@ -43,10 +43,10 @@ export default function HowItWorks() {
             How It Works
           </p>
           <h2 className="text-4xl lg:text-5xl font-black tracking-tight text-foreground mb-4">
-            Three steps from question to insight.
+            Configure once. Reason continuously.
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            FinSight eliminates the gap between your question and your ERP data.
+            FinSight is built around your company&apos;s financial model — not a generic AI layer on top of raw ERP tables.
           </p>
         </AnimateIn>
 
@@ -75,7 +75,6 @@ export default function HowItWorks() {
                             : "bg-white border-border text-foreground scale-100"
                         }`}
                       >
-                        {/* Icon lifts slightly on hover */}
                         <Icon className={`w-8 h-8 transition-transform duration-300 ${isActive ? "-translate-y-0.5" : ""}`} />
                       </div>
                     </div>
@@ -84,14 +83,11 @@ export default function HowItWorks() {
                     <div className="flex-1 pt-3 lg:grid lg:grid-cols-[1fr_auto] lg:gap-12 lg:items-start">
                       <div>
                         <div className="flex items-center gap-3 mb-3">
-                          {/* Number scales up on hover */}
                           <span className={`text-xs font-black uppercase tracking-widest transition-all duration-300 origin-left ${isActive ? "text-primary scale-110" : "text-primary/60 scale-100"}`}>
                             {step.number}
                           </span>
-                          {/* Title nudges right on hover */}
                           <h3 className={`text-2xl font-bold text-foreground transition-transform duration-300 ${isActive ? "translate-x-1" : ""}`}>{step.title}</h3>
                         </div>
-                        {/* Description brightens on hover */}
                         <p className={`leading-relaxed max-w-lg transition-colors duration-300 ${isActive ? "text-foreground/70" : "text-muted-foreground"}`}>{step.description}</p>
                       </div>
                       <div className="hidden lg:block mt-1">
@@ -100,7 +96,6 @@ export default function HowItWorks() {
                             ? "bg-primary/10 border-primary/30 text-primary"
                             : "bg-primary/5 border-primary/10 text-primary/60"
                         }`}>
-                          {/* Tags stagger-slide in on hover */}
                           {step.aside.split(" · ").map((tag, tagIdx) => (
                             <span
                               key={tag}
@@ -119,6 +114,30 @@ export default function HowItWorks() {
             })}
           </div>
         </div>
+
+        {/* Deployment proof */}
+        <AnimateIn from="bottom" delay={150} className="mt-16">
+          <div className="rounded-2xl border border-primary/20 bg-primary/[0.03] px-8 py-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-12">
+            <div className="flex-1">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-1">Deployment</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Typical deployment takes <span className="font-semibold text-foreground">3–4 weeks</span>. Around{" "}
+                <span className="font-semibold text-foreground">80% is template-driven</span> with 20% company-specific
+                configuration — no ERP replacement, no redesign of finance processes.
+              </p>
+            </div>
+            <div className="flex gap-6 flex-shrink-0">
+              <div className="text-center">
+                <p className="text-2xl font-black text-primary">3–4</p>
+                <p className="text-xs text-muted-foreground">weeks</p>
+              </div>
+              <div className="text-center">
+                <p className="text-2xl font-black text-primary">80%</p>
+                <p className="text-xs text-muted-foreground">template-driven</p>
+              </div>
+            </div>
+          </div>
+        </AnimateIn>
       </div>
     </section>
   );
