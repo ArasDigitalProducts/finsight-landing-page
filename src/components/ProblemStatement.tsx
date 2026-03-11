@@ -22,7 +22,7 @@ const problems = [
 
 export default function ProblemStatement() {
   return (
-    <section className="py-24 bg-foreground/[0.02] border-y border-border">
+    <section id="problem" className="py-24 bg-foreground/[0.02] border-y border-border">
       <div className="max-w-6xl mx-auto px-6">
         <AnimateIn className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
@@ -41,12 +41,12 @@ export default function ProblemStatement() {
           {problems.map((problem, i) => {
             const Icon = problem.icon;
             return (
-              <AnimateIn key={problem.text} delay={i * 80}>
-                <div className="rounded-2xl border border-border bg-white p-6 h-full flex flex-col gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-foreground/[0.06] flex items-center justify-center text-foreground/60">
-                    <Icon className="w-5 h-5" />
+              <AnimateIn key={problem.text} delay={i * 80} className="h-full">
+                <div className="group h-full rounded-2xl border border-border bg-white p-6 flex flex-col gap-4 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/10">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-500 bg-foreground/[0.06] text-foreground/60 group-hover:bg-primary/10 group-hover:text-primary">
+                    <Icon className="w-5 h-5 transition-transform duration-300 group-hover:-translate-y-0.5" />
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{problem.text}</p>
+                  <p className="text-sm leading-relaxed transition-colors duration-500 text-muted-foreground group-hover:text-foreground/70">{problem.text}</p>
                 </div>
               </AnimateIn>
             );

@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator";
 
 const footerLinks: Record<string, { label: string; href: string }[]> = {
   Product: [
+    { label: "Problem", href: "#problem" },
     { label: "Features", href: "#features" },
     { label: "How It Works", href: "#how-it-works" },
     { label: "Why FinSight", href: "#why-finsight" },
