@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalLayout title="Terms of Service" lastUpdated="1 March 2025">
+    <LegalLayout title="Terms of Service" lastUpdated="1 March 2026">
       <p>
         These Terms of Service (&quot;Terms&quot;) govern your access to and use of the FinSight platform, operated by Aras Digital Products d.o.o. in partnership with BSG Advisory™. By accessing or using FinSight, you agree to be bound by these Terms.
       </p>

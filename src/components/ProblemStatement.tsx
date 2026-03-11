@@ -5,18 +5,22 @@ import AnimateIn from "@/components/AnimateIn";
 const problems = [
   {
     icon: Database,
+    title: "No built-in reasoning",
     text: "ERP systems manage transactions, not company-specific financial reasoning",
   },
   {
     icon: FileSpreadsheet,
+    title: "Logic lives in spreadsheets",
     text: "Hidden logic lives in spreadsheets and in the heads of specialists",
   },
   {
     icon: Users,
+    title: "Analyst bottleneck",
     text: "Executives still depend on analysts to interpret data before decisions can be made",
   },
   {
     icon: BarChart,
+    title: "Dashboards show what — not why",
     text: "Dashboards show what happened — not why it happened, or what to adjust",
   },
 ];
@@ -47,7 +51,8 @@ export default function ProblemStatement() {
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-500 bg-foreground/[0.06] text-foreground group-hover:bg-primary/10 group-hover:text-primary">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <p className="text-sm leading-relaxed transition-colors duration-500 text-muted-foreground group-hover:text-foreground/70">{problem.text}</p>
+                  <h3 className="text-xl font-bold mb-3 text-foreground">{problem.title}</h3>
+                  <p className="leading-relaxed transition-colors duration-500 text-muted-foreground group-hover:text-foreground/70">{problem.text}</p>
                 </Card>
               </AnimateIn>
             );

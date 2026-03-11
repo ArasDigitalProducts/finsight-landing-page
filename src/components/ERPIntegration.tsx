@@ -60,14 +60,12 @@ export default function ERPIntegration() {
             const Icon = prop.icon;
             return (
               <AnimateIn key={prop.title} delay={i * 80} className="h-full">
-                <Card className="group h-full p-8 rounded-2xl border border-border bg-foreground/[0.015] shadow-none flex gap-5 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/10">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 transition-all duration-500 bg-foreground/[0.06] text-foreground group-hover:bg-primary/10 group-hover:text-primary">
+                <Card className="group h-full p-8 rounded-2xl border border-border bg-foreground/[0.015] shadow-none transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/10">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-500 bg-foreground/[0.06] text-foreground group-hover:bg-primary/10 group-hover:text-primary">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <div>
-                    <h3 className="text-base font-bold text-foreground mb-1.5">{prop.title}</h3>
-                    <p className="text-sm leading-relaxed transition-colors duration-500 text-muted-foreground group-hover:text-foreground/70">{prop.description}</p>
-                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-foreground">{prop.title}</h3>
+                  <p className="leading-relaxed transition-colors duration-500 text-muted-foreground group-hover:text-foreground/70">{prop.description}</p>
                 </Card>
               </AnimateIn>
             );

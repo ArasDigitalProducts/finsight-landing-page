@@ -41,8 +41,8 @@ export default function CTABanner() {
           Early Access Programme
         </div>
 
-        <h2 className="text-4xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-[1.05]">
-          Ready to control your<br />finances with AI?
+        <h2 className="text-4xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-[1.05] text-pretty">
+          Ready to give your finance team decision&#8209;grade answers?
         </h2>
 
         <p className="text-lg text-white/60 mb-10 max-w-xl mx-auto leading-relaxed">

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function SecurityPage() {
   return (
-    <LegalLayout title="Security" lastUpdated="1 March 2025">
+    <LegalLayout title="Security" lastUpdated="1 March 2026">
       <p>
         Security is foundational to FinSight. We handle sensitive financial data and take our responsibility to protect it seriously. This page describes the technical and organisational measures we have in place.
       </p>

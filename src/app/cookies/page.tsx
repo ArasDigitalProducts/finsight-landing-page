@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function CookiesPage() {
   return (
-    <LegalLayout title="Cookie Policy" lastUpdated="1 March 2025">
+    <LegalLayout title="Cookie Policy" lastUpdated="1 March 2026">
       <p>
         This Cookie Policy explains how FinSight uses cookies and similar tracking technologies when you visit our website or use our platform. By continuing to use FinSight, you agree to our use of cookies as described below.
       </p>

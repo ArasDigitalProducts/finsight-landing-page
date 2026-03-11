@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalLayout title="Privacy Policy" lastUpdated="1 March 2025">
+    <LegalLayout title="Privacy Policy" lastUpdated="1 March 2026">
       <p>
         FinSight (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;) is operated by Aras Digital Products d.o.o. in partnership with BSG Advisory™. This Privacy Policy explains how we collect, use, store and protect information when you use the FinSight platform.
       </p>
