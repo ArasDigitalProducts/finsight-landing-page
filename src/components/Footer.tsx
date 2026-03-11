@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="col-span-2 lg:col-span-1">
             <div className="mb-4">
-              <Image src="/finsight-logo.png" alt="FinSight" width={2571} height={675} className="h-7 w-auto" />
+              <Image src="/finsight-logo.png" alt="FinSight" width={1749} height={492} className="h-7 w-auto" />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               AI-powered financial controlling. A single prompt to unlock insights from your ERP data.

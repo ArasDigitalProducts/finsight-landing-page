@@ -45,7 +45,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="#">
-          <Image src="/finsight-logo.png" alt="FinSight" width={2571} height={675} className="h-7 w-auto" />
+          <Image src="/finsight-logo.png" alt="FinSight" width={1749} height={492} className="h-7 w-auto" />
         </a>
 
         {/* Desktop nav */}
