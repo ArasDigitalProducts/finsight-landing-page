@@ -23,6 +23,14 @@ export default function LogoBar() {
             <a href="https://bsg-advisory.hr/en/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 opacity-70 hover:opacity-100 hover:scale-105">
               <Image src="/bsg-logo.png" alt="BSG Advisory" width={455} height={203} className="h-10 w-auto" />
             </a>
+
+            <Separator orientation="vertical" className="hidden sm:block h-10" />
+            <div className="sm:hidden w-16 h-px bg-border" />
+
+            {/* Excel Computers */}
+            <a href="https://excel.hr" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 opacity-70 hover:opacity-100 hover:scale-105">
+              <Image src="/excel-logo.jpg" alt="Excel Computers" width={837} height={464} className="h-10 w-auto" />
+            </a>
           </div>
         </AnimateIn>
       </div>
