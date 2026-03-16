@@ -87,7 +87,7 @@ export default function TermsPage() {
 
       <h2>12. Contact</h2>
       <p>
-        For questions about these Terms, contact us at <a href="mailto:legal@finsight.ai">legal@finsight.ai</a>.
+        For questions about these Terms, contact us at <a href="mailto:legal@finsightagent.com">legal@finsightagent.com</a>.
       </p>
     </LegalLayout>
   );

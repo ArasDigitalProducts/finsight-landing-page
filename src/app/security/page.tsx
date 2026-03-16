@@ -76,7 +76,7 @@ export default function SecurityPage() {
 
       <h2>9. Responsible disclosure</h2>
       <p>
-        If you discover a potential security vulnerability in FinSight, we ask that you report it to us responsibly before making it public. Please email <a href="mailto:security@finsight.ai">security@finsight.ai</a> with details. We will acknowledge your report within 24 hours and aim to resolve confirmed vulnerabilities within 30 days.
+        If you discover a potential security vulnerability in FinSight, we ask that you report it to us responsibly before making it public. Please email <a href="mailto:security@finsightagent.com">security@finsightagent.com</a> with details. We will acknowledge your report within 24 hours and aim to resolve confirmed vulnerabilities within 30 days.
       </p>
       <p>
         We do not take legal action against researchers who follow responsible disclosure practices.
@@ -84,7 +84,7 @@ export default function SecurityPage() {
 
       <h2>10. Contact</h2>
       <p>
-        For security-related questions or to report a vulnerability, contact <a href="mailto:security@finsight.ai">security@finsight.ai</a>.
+        For security-related questions or to report a vulnerability, contact <a href="mailto:security@finsightagent.com">security@finsightagent.com</a>.
       </p>
     </LegalLayout>
   );

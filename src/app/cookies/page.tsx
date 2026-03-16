@@ -80,7 +80,7 @@ export default function CookiesPage() {
 
       <h2>7. Contact</h2>
       <p>
-        For questions about our use of cookies, contact us at <a href="mailto:privacy@finsight.ai">privacy@finsight.ai</a>.
+        For questions about our use of cookies, contact us at <a href="mailto:privacy@finsightagent.com">privacy@finsightagent.com</a>.
       </p>
     </LegalLayout>
   );

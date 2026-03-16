@@ -83,7 +83,7 @@ export default function PrivacyPage() {
         <li>Lodge a complaint with your national data protection authority</li>
       </ul>
       <p>
-        To exercise any of these rights, contact us at <a href="mailto:privacy@finsight.ai">privacy@finsight.ai</a>.
+        To exercise any of these rights, contact us at <a href="mailto:privacy@finsightagent.com">privacy@finsightagent.com</a>.
       </p>
 
       <h2>7. Cookies</h2>
@@ -103,7 +103,7 @@ export default function PrivacyPage() {
 
       <h2>10. Contact</h2>
       <p>
-        For privacy-related questions, contact our Data Protection team at <a href="mailto:privacy@finsight.ai">privacy@finsight.ai</a>.
+        For privacy-related questions, contact our Data Protection team at <a href="mailto:privacy@finsightagent.com">privacy@finsightagent.com</a>.
       </p>
     </LegalLayout>
   );

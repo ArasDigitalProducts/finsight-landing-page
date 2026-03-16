@@ -50,7 +50,7 @@ export default function LegalLayout({ title, lastUpdated, children }: LegalLayou
       {/* Footer strip */}
       <footer className="border-t border-border mt-16">
         <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-          <p>© 2025 FinSight. Delivered by Aras™ Digital Products & BSG Advisory™.</p>
+          <p>© 2026 FinSight. Delivered by Aras™ Digital Products & BSG Advisory™.</p>
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-foreground transition-colors">Terms</Link>

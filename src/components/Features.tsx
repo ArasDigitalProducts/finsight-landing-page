@@ -25,7 +25,7 @@ const features = [
     icon: Shield,
     title: "Audit-Ready Insights",
     description:
-      "Every output is fully traceable to source data. FinSight encodes your financial logic explicitly, making reasoning transparent and auditable by design. SOC 2 compliant with role-based access control.",
+      "Every output is fully traceable to source data. FinSight encodes your financial logic explicitly, making reasoning transparent and auditable by design. Role-based access control with SOC 2 Type II certification in progress.",
   },
 ];
 

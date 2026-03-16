@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FinSight — A single prompt finance controlling",
+  title: "FinSight — A single prompt. Financial controlling.",
   description:
     "FinSight is an AI agent system for financial controlling. Analyse your ERP data and get instant insights with a single natural language prompt.",
   keywords: ["finance", "ERP", "AI", "financial controlling", "SAP", "analytics"],
